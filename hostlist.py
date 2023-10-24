@@ -3,38 +3,11 @@
 #
 # Hostlist library
 #
-# Copyright (C) 2008-2018
-#                    Kent Engström <kent@nsc.liu.se>,
-#                    Thomas Bellman <bellman@nsc.liu.se>,
-#                    Pär Lindfors <paran@nsc.liu.se> and
-#                    Torbjörn Lönnemark <ketl@nsc.liu.se>,
-#                    National Supercomputer Centre
+# To convert a long list of hosts to a short range string - run a command as follows
+# python3 -c 'import hostlist; str1 = "node1 node2 node3 node8 node9 node10"; hosts = hostlistnew.collect_hostlist(list(str1.split(" "))); print(hosts)'
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful, but
-# WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-# 02110-1301, USA.
-
-"""Handle hostlist expressions.
-
-This module provides operations to expand and collect hostlist
-expressions.
-
-The hostlist expression syntax is the same as in several programs
-developed at LLNL (https://computing.llnl.gov/linux/). However in
-corner cases the behaviour of this module have not been compared for
-compatibility with pdsh/dshbak/SLURM et al.
-"""
+# To expand a list in bash
+# python3 -c 'import hostlist; str1 = "node[1-3,8-10]"; hosts = hostlistnew.expand_hostlist(str1); print(hosts)'
 
 __version__ = "1.23.0"
 
